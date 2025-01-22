@@ -1,0 +1,31 @@
+.container > header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--slate-200);
+  background-color: var(--white);
+}
+
+.container > header a {
+  display: inline-block;
+}
+.logo_large {
+  display: block;
+}
+.logo_small {
+  display: none;
+}
+
+.container main {
+  height: calc(100vh - 60px);
+  /* padding: 24px 0; */
+}
+
+@media screen and (max-width: 375px) {
+  .logo_large {
+    display: none;
+  }
+  .logo_small {
+    display: block;
+  }
+}

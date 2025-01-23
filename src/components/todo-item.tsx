@@ -42,7 +42,7 @@ export default function TodoItem(todo: Todo) {
         height={32}
         onClick={() => formRef.current?.requestSubmit()}
       />
-      <Link href={"/"}>{todo.name}</Link>
+      <Link href={`/todo/${todo.id}`}>{todo.name}</Link>
     </form>
   );
 }

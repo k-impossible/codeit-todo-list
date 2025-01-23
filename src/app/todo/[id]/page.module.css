@@ -1,0 +1,7 @@
+.container {
+  height: 100%;
+}
+.container section {
+  background-color: var(--white);
+  height: 100%;
+}

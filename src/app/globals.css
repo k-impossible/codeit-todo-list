@@ -50,19 +50,19 @@ a {
 
 section {
   max-width: var(--desktop);
-  margin: 24px auto;
+  margin: 0 auto;
+  padding: 24px 0;
   flex: 1;
 }
 @media screen and (max-width: 1200px) {
   section {
-    padding: 0 24px;
+    padding: 24px;
   }
 }
 @media screen and (max-width: 744px) {
 }
 @media screen and (max-width: 375px) {
   section {
-    padding: 0 16px;
-    margin: 16px auto;
+    padding: 16px;
   }
 }

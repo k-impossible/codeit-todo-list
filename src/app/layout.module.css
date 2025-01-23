@@ -18,7 +18,6 @@
 
 .container main {
   height: calc(100vh - 60px);
-  /* padding: 24px 0; */
 }
 
 @media screen and (max-width: 375px) {

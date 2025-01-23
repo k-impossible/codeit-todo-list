@@ -1,0 +1,28 @@
+.checklist {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 16px;
+}
+.empty_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  height: 100%;
+}
+.empty_container p {
+  color: var(--slate-400);
+}
+.empty_small {
+  display: none;
+}
+@media screen and (max-width: 375px) {
+  .empty_large {
+    display: none;
+  }
+  .empty_small {
+    display: block;
+  }
+}

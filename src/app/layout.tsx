@@ -1,6 +1,7 @@
 import style from "./layout.module.css";
 import "./globals.css";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function RootLayout({
   children,
@@ -21,14 +22,19 @@ export default function RootLayout({
           <header>
             <section>
               <Link href={"/"}>
-                <img
-                  src="../images/logo_large.png"
+                <Image
+                  src="/images/logo_large.png"
                   alt="logo_large"
+                  width={151}
+                  height={40}
                   className={style.logo_large}
                 />
-                <img
-                  src="../images/logo_small.png"
+
+                <Image
+                  src="/images/logo_small.png"
                   alt="logo_small"
+                  width={71}
+                  height={40}
                   className={style.logo_small}
                 />
               </Link>

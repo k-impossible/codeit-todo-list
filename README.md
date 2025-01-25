@@ -1,7 +1,9 @@
 # 프로젝트 설명
 
 이 프로젝트는 코드잇 스프린트 과제로, Next.js와 TypeScript를 활용하여 "할 일 목록(Todo List)" 애플리케이션을 반응형 웹페이지로 구현했습니다. 사용자는 할 일을 추가, 수정, 삭제할 수 있으며, 이미지 업로드 기능도 포함되어 있습니다.
+<br/>
 
+[프로젝트 링크](https://codeit-todo-list-4r4em67t3-taehuns-projects-1fcb6cd3.vercel.app/)
 <br/>
 
 # 주요 기능
@@ -52,6 +54,7 @@
  ┣ 📂actions     // server action 함수 파일
  ┣ 📂api         // API 요청 함수 파일
  ┣ 📂components  // UI components 파일
+ ┃ ┗ 📂css       // UI components CSS 파일
  ┣ 📂app
- ┃ ┗ 📂todo/[id] // todo 페이지 파일
+ ┃ ┗ 📂todo/[id] // todo 상세 페이지
 ```

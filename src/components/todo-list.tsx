@@ -3,6 +3,16 @@ import style from "./css/todo-list.module.css";
 import Image from "next/image";
 import getTodoList from "@/api/getTodoList";
 
+/**
+ * @name TodoList
+ * @description 할 일 리스트 컴포넌트입니다.
+ * todo 진행상태에 따라 todo 리스트를 렌더링합니다.
+ * 할 일이 없을 경우 빈 화면을 렌더링합니다.
+ * 할 일이 있을 경우 TodoItem 컴포넌트를 렌더링합니다.
+ * @param type todo 진행상태를 구분합니다.
+
+ */
+
 export default async function TodoList({ type }: { type: string }) {
   const todos = await getTodoList();
   switch (type) {

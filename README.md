@@ -51,10 +51,10 @@
  ┣ 📂icons       // 아이콘 이미지 파일
  ┣ 📂images      // 이미지 파일
 📂src
- ┣ 📂actions     // server action 함수 파일
- ┣ 📂api         // API 요청 함수 파일
- ┣ 📂components  // UI components 파일
+ ┣ 📂actions     // server action 함수 파일 (* 주석)
+ ┣ 📂api         // API 요청 함수 파일       (* 주석)
+ ┣ 📂components  // UI components 파일     (* 주석)
  ┃ ┗ 📂css       // UI components CSS 파일
  ┣ 📂app
- ┃ ┗ 📂todo/[id] // todo 상세 페이지
+ ┃ ┗ 📂todo/[id] // todo 상세 페이지         (* 주석)
 ```

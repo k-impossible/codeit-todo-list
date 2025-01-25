@@ -6,6 +6,16 @@ import { Todo } from "@/types";
 import Image from "next/image";
 import { useActionState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
+
+/**
+ * @name TodoEditButton
+ * @description 상세 페이지의 할 일 수정 버튼 컴포넌트입니다.
+ * @param originalTodo 원본 할 일 객체입니다.
+ * @param currentTodo 수정된 할 일 객체입니다.
+ * @param selectedFile 선택된 이미지 파일입니다.
+ * props로 todo의 원본, 수정중인 todo, 선택된 File을 받아 formdata를 구성해 EditTodoAction을 실행합니다.
+ */
+
 export default function TodoEditButton({
   originalTodo,
   currentTodo,
@@ -16,11 +26,14 @@ export default function TodoEditButton({
   selectedFile: File | null;
 }) {
   const router = useRouter();
-  const isEdited = JSON.stringify(originalTodo) !== JSON.stringify(currentTodo);
   const formRef = useRef<HTMLFormElement>(null);
   const [state, formAction, isPending] = useActionState(EditTodoAction, null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+  // todo가 변경되었는지 확인합니다.
+  const isEdited = JSON.stringify(originalTodo) !== JSON.stringify(currentTodo);
+
+  // 선택된 파일이 변경되면 file input에 반영합니다.
   useEffect(() => {
     if (fileInputRef.current && selectedFile) {
       const dataTransfer = new DataTransfer();
@@ -29,6 +42,7 @@ export default function TodoEditButton({
     }
   }, [selectedFile]);
 
+  // 서버액션 상태가 변경되면 상태에 따라 alert를 띄웁니다. 성공하면 메인 페이지로 이동합니다.
   useEffect(() => {
     if (state && !state.status) {
       alert(state.error);

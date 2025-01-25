@@ -9,7 +9,6 @@ export default function Home() {
         <SearchBar />
         <div className={style.checklist_container}>
           <TodoList type="todo" />
-
           <TodoList type="done" />
         </div>
       </section>

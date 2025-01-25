@@ -7,6 +7,7 @@
   --slate-300: #cbd5e1;
   --slate-200: #e2e8f0;
   --slate-100: #f1f5f9;
+  --slate-50: #f8fafc;
   --violet-600: #7c3aed;
   --violet-100: #ede9fe;
   --rose-500: #f43f5e;
@@ -59,9 +60,9 @@ section {
     padding: 24px;
   }
 }
-@media screen and (max-width: 744px) {
+@media screen and (max-width: 768px) {
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 425px) {
   section {
     padding: 16px;
   }

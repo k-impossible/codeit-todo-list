@@ -5,14 +5,14 @@
   padding-top: 40px;
 }
 
-@media screen and (max-width: 744px) {
+@media screen and (max-width: 768px) {
   .checklist_container {
     flex-direction: column;
     gap: 48px;
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 425px) {
   .checklist_container {
     padding-top: 24px;
   }

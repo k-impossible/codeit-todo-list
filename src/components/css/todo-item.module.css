@@ -12,13 +12,28 @@
 .check_item img {
   cursor: pointer;
 }
+.check_item a {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .done {
   background-color: var(--violet-100);
-  text-decoration: line-through;
 }
 .done a {
+  text-decoration: line-through;
   color: var(--slate-800);
 }
 .check_item a:hover {
   font-weight: var(--bold);
+}
+.detail {
+  justify-content: center;
+}
+.detail_name {
+  font-weight: var(--bold);
+  text-decoration: underline;
+  outline: none;
+  background-color: inherit;
+  border: none;
 }

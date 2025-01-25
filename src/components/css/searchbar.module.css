@@ -54,7 +54,7 @@
 .empty span {
   color: var(--white);
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 425px) {
   .container {
     gap: 8px;
   }

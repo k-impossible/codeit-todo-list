@@ -3,6 +3,7 @@
   flex-direction: column;
   flex: 1;
   gap: 16px;
+  max-width: 50%;
 }
 .empty_container {
   display: flex;
@@ -18,7 +19,13 @@
 .empty_small {
   display: none;
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 768px) {
+  .checklist {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 425px) {
   .empty_large {
     display: none;
   }

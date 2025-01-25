@@ -20,7 +20,7 @@
   height: calc(100vh - 60px);
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 425px) {
   .logo_large {
     display: none;
   }

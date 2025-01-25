@@ -1,5 +1,5 @@
 import TodoItem from "./todo-item";
-import style from "./todo-list.module.css";
+import style from "./css/todo-list.module.css";
 import Image from "next/image";
 import getTodoList from "@/api/getTodoList";
 
@@ -41,7 +41,7 @@ export default async function TodoList({ type }: { type: string }) {
           ) : (
             todos
               .filter((todo) => !todo.isCompleted)
-              .map((todo) => <TodoItem key={todo.id} {...todo} />)
+              .map((todo) => <TodoItem key={todo.id} todo={todo} />)
           )}
         </div>
       );
@@ -80,7 +80,7 @@ export default async function TodoList({ type }: { type: string }) {
           ) : (
             todos
               .filter((todo) => todo.isCompleted)
-              .map((todo) => <TodoItem key={todo.id} {...todo} />)
+              .map((todo) => <TodoItem key={todo.id} todo={todo} />)
           )}
         </div>
       );

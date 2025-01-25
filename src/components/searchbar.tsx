@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import style from "./searchbar.module.css";
+import style from "./css/searchbar.module.css";
 import { useActionState, useEffect, useRef, useState } from "react";
 import { createTodoAction } from "@/actions/create-todo-action";
 import getTodoList from "@/api/getTodoList";

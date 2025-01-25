@@ -1,17 +1,30 @@
 "use client";
 
 import Image from "next/image";
-import style from "./todo-item.module.css";
+import style from "./css/todo-item.module.css";
 import { Todo } from "@/types";
 import { useActionState, useEffect, useRef } from "react";
-import { CheckTodoAction } from "@/actions/check-todo-action";
+import { EditTodoAction } from "@/actions/edit-todo-action";
 import Link from "next/link";
 
-export default function TodoItem(todo: Todo) {
+interface TodoItemProps {
+  todo: Todo;
+  isDetail?: boolean;
+  handleChange?: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
+}
+
+export default function TodoItem({
+  todo,
+  isDetail,
+  handleChange,
+}: TodoItemProps) {
   const checkImage = todo.isCompleted ? "chk_complete" : "chk_default";
   const checkClass = todo.isCompleted ? style.done : "";
+  const detailStyle = isDetail ? style.detail : "";
   const formRef = useRef<HTMLFormElement>(null);
-  const [state, formAction, isPending] = useActionState(CheckTodoAction, null);
+  const [state, formAction, isPending] = useActionState(EditTodoAction, null);
 
   useEffect(() => {
     if (state && !state.status) {
@@ -21,17 +34,18 @@ export default function TodoItem(todo: Todo) {
 
   return (
     <form
-      className={`${style.check_item} ${checkClass}`}
+      className={`${style.check_item} ${checkClass} ${detailStyle}`}
       ref={formRef}
       action={formAction}
     >
       <input name="id" value={todo.id} hidden readOnly />
-      <input name="name" value={todo.name} hidden readOnly />
+      {isDetail || <input name="name" value={todo.name} hidden readOnly />}
+
       <input name="memo" value={todo.memo} hidden readOnly />
       <input name="imageUrl" value={todo.imageUrl} hidden readOnly />
       <input
         name="isCompleted"
-        value={String(todo.isCompleted)}
+        value={String(!todo.isCompleted)}
         hidden
         readOnly
       />
@@ -42,7 +56,16 @@ export default function TodoItem(todo: Todo) {
         height={32}
         onClick={() => formRef.current?.requestSubmit()}
       />
-      <Link href={`/todo/${todo.id}`}>{todo.name}</Link>
+      {isDetail ? (
+        <input
+          onChange={handleChange}
+          name="name"
+          value={todo.name}
+          className={style.detail_name}
+        />
+      ) : (
+        <Link href={`/todo/${todo.id}`}>{todo.name}</Link>
+      )}
     </form>
   );
 }

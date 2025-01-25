@@ -24,7 +24,7 @@ export default function SearchBar() {
     if (state && !state.status) {
       alert(state.error);
     }
-  }, [state]);
+  }, [state, todoCount]);
 
   const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
@@ -46,7 +46,10 @@ export default function SearchBar() {
 
       <div
         className={`${style.btn} ${todoCount < 1 ? style.empty : ""}`}
-        onClick={() => formRef.current?.requestSubmit()}
+        onClick={() => {
+          if (isPending) return;
+          formRef.current?.requestSubmit();
+        }}
       >
         <Image
           src={`/icons/${todoCount < 1 ? "plus_white" : "plus_black"}.png`}
